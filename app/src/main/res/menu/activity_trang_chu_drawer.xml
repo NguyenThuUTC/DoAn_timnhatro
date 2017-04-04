@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mnDKNhanTin"
+            android:title="Đăng ký nhận tin"
+            />
+
+        <item
+            android:id="@+id/mnTimNguoiOGhep"
+            android:icon="@drawable/ic_timkiem"
+            android:title="Tìm người ở ghép" />
+        <item
+            android:id="@+id/mnTinDaDang"
+            android:icon="@drawable/ic_tindadang"
+            android:title="Tin đã đăng" />
+        <item
+            android:id="@+id/mnHuyNhanTinNhan"
+            android:icon="@drawable/ic_huynhantn"
+            android:title="Hủy nhận tin nhắn" />
+        <item
+            android:id="@+id/mnBanDo"
+            android:title="Xem trên Bản đồ"
+            />
+
+    </group>
+
+</menu>

@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "790171518311",
+    "firebase_url": "https://doantimnhatro.firebaseio.com",
+    "project_id": "doantimnhatro",
+    "storage_bucket": "doantimnhatro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790171518311:android:340cf2ecc7d97fbd",
+        "android_client_info": {
+          "package_name": "com.example.admin.doan_timnhatro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790171518311-7hog9umafrhet1ocivkljsds3egbdcvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.doan_timnhatro",
+            "certificate_hash": "57a11cfc2a8385bbb0015ed3ff363465e077fdc7"
+          }
+        },
+        {
+          "client_id": "790171518311-9ja22ejkkkneugf1mbb52c833gpb1k3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.doan_timnhatro",
+            "certificate_hash": "b377bc09c274be32e2667bbe28649d15c2a0a628"
+          }
+        },
+        {
+          "client_id": "790171518311-ts1vi7c7nsl9mp9l95iaoi1vp9h0oqc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy8EBFJhe1Yp0QvuUhBZLIpiqtBT4TjSM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790171518311-ts1vi7c7nsl9mp9l95iaoi1vp9h0oqc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

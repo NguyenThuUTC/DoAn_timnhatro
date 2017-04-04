@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imgAvatar"
+            android:src="@drawable/icon_avatar"/>
+        <TextView
+            android:textColor="@color/text_black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nguyễn Thị Thu"
+            android:id="@+id/txtTen"
+            android:layout_toRightOf="@id/imgAvatar"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7:16 PM 4/2/2017"
+            android:layout_below="@id/txtTen"
+            android:layout_toRightOf="@id/imgAvatar"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtThongTinLienHe"
+        android:text="Tên chủ nhà: Phạm Khôi
+ Điện thoại liên hệ: 01668099981"
+        />
+    <TextView
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="---Cho thuê phòng---"/>
+    <TextView
+        android:textColor="@color/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Diện tích 20m2
+ Nhà vệ sinh: khép kín"/>
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/banner"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imgSoNguoiThich"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_thich"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/txtSoNguoiThich"
+                android:layout_toRightOf="@id/imgSoNguoiThich"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/txtSoNguoiThich"
+                android:id="@+id/imgSoNguoiKhongThich"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_khongthich"/>
+            <TextView
+
+                android:gravity="center_vertical"
+                android:id="@+id/txtSoNguoiKhongThich"
+                android:layout_toRightOf="@id/imgSoNguoiKhongThich"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_below="@id/imgSoNguoiThich"
+                android:id="@+id/imgChuaThich"
+                android:src="@mipmap/ic_chuathich"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                />
+            <TextView
+                android:layout_below="@id/txtSoNguoiThich"
+                android:layout_toRightOf="@id/imgChuaThich"
+                android:id="@+id/txtThich"
+                android:textColor="@color/text_black"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Thích"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgBinhLuan"
+                android:src="@mipmap/ic_binhluan"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                />
+            <TextView
+                android:layout_toRightOf="@id/imgBinhLuan"
+                android:id="@+id/txtBinhLuan"
+                android:textColor="@color/text_black"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Bình luận" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/txtSoBinhLuan"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="(5)"
+                android:layout_toRightOf="@id/txtBinhLuan"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+           android:gravity="bottom"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1">
+           <ImageView
+               android:id="@+id/imgChiaSe"
+               android:src="@mipmap/ic_chiase"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               />
+           <TextView
+               android:layout_toRightOf="@id/imgChiaSe"
+               android:id="@+id/txtChiaSe"
+               android:textColor="@color/text_black"
+               android:gravity="center_vertical"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:text="Chia sẻ"/>
+           <TextView
+               android:id="@+id/txtSoLuotChiaSo"
+               android:textColor="@color/text_black"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:text="(5)"
+               android:layout_toRightOf="@id/txtChiaSe"
+               android:gravity="center_vertical"/>
+       </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="---Thông tin liên hệ---"/>
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên chủ nhà"/>
+            <EditText
+                android:textSize="14sp"
+                android:textColorHint="@color/text_black"
+                android:gravity="center_vertical"
+                android:id="@+id/edtTenChuNha"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Điện thoại liên hệ"/>
+            <EditText
+                android:textSize="14sp"
+                android:textColorHint="@color/text_black"
+                android:gravity="center_vertical"
+                android:id="@+id/edtDTLienHe"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="---Mô tả phòng---"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Ở chung với chủ"/>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoChungChu"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Có"/>
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:id="@+id/rdoKhongChungChu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Không"/>
+                </RadioGroup>
+            </TableRow>
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ"/>
+            <EditText
+                android:textSize="16sp"
+                android:textColorHint="@color/text_black"
+                android:gravity="center_vertical"
+                android:id="@+id/edtDiaChi"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diện tích"/>
+            <EditText
+                android:textSize="16sp"
+                android:textColorHint="@color/text_black"
+                android:gravity="center_vertical"
+                android:id="@+id/edtDienTich"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giá phòng"/>
+            <EditText
+                android:id="@+id/edtGiaPhong"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="@color/text_black"
+                android:textSize="14sp"/>
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phòng ở tầng thứ?"/>
+            <EditText
+                android:textSize="14sp"
+                android:textColorHint="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giờ giấc"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="@color/text_black"
+                android:textSize="14sp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Điều hòa"/>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoCoDieuHoa"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Có"/>
+
+                    <RadioButton
+                        android:textSize="16sp"
+                        android:id="@+id/rdoKhongCoDieuHoa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Không"/>
+                </RadioGroup>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Bình nóng lạnh"/>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoCoNL"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Có"/>
+
+                    <RadioButton
+                        android:textSize="16sp"
+                        android:id="@+id/rdoKhongNL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Không"/>
+                </RadioGroup>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Nhà vệ sinh"/>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoNVSKhepKin"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Khép kín"/>
+
+                    <RadioButton
+                        android:textSize="16sp"
+                        android:id="@+id/rdoNVSKhongKhepKin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Không khép kín"/>
+                </RadioGroup>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Chỗ để xe"/>
+
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoCoChoDeXe"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Không"/>
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:id="@+id/rdoKhongCoChoDeXe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Có"/>
+                </RadioGroup>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="Wifi"/>
+
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/rdoCoWifi"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text="Có"/>
+
+                    <RadioButton
+                        android:textSize="14sp"
+                        android:id="@+id/rdoTuKeoMang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Tự kéo"/>
+                </RadioGroup>
+            </TableRow>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgAnhPhongTro"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_height="150dp"
+                    android:src="@drawable/banner"/>
+                <Button
+                    android:background="@drawable/radius_button"
+                    android:textColor="@color/text_blue"
+                    android:layout_toRightOf="@id/imgAnhPhongTro"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="50dp"
+                    android:text="Thêm ảnh"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <Button
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/radius_button"
+                    android:textColor="@color/text_blue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Ảnh"
+                    android:id="@+id/button2" />
+
+                <Button
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/radius_button"
+                    android:textColor="@color/text_blue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Đăng tin"/>
+                <Button
+                    android:background="@drawable/radius_button"
+                    android:textColor="@color/text_blue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Hủy"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

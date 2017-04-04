@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tìm nhà trọ</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="dangky"><b><u>Đăng ký</u></b></string>
+    <string name="dangnhap"><b><u>Đăng nhập</u></b></string>
+</resources>

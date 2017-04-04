@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/banner"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+   <ImageView
+
+       android:layout_width="70dp"
+       android:layout_height="70dp"
+       android:id="@+id/imgAvatar"
+       android:src="@drawable/icon_avatar"/>
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/txtTen"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Nguyễn Thị Thu"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#0aea7e"/>
+    <TextView
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:id="@+id/txtSoDT"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="01668099981"/>
+
+</LinearLayout>
