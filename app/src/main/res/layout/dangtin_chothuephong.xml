@@ -128,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="Phòng ở tầng thứ?"/>
             <EditText
+                android:id="@+id/edtTang"
                 android:textSize="14sp"
                 android:textColorHint="@color/text_black"
                 android:layout_width="match_parent"
@@ -139,6 +140,7 @@
                 android:layout_height="wrap_content"
                 android:text="Giờ giấc"/>
             <EditText
+                android:id="@+id/edtGioGiac"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textColorHint="@color/text_black"
@@ -310,15 +312,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/imgAnhPhongTro"
+                    android:id="@+id/imgAnhPhongTro1"
                     android:layout_width="0dp"
                     android:layout_weight="8"
                     android:layout_height="150dp"
                     android:src="@drawable/banner"/>
                 <Button
+                    android:id="@+id/btnThemAnh"
                     android:background="@drawable/radius_button"
                     android:textColor="@color/text_blue"
-                    android:layout_toRightOf="@id/imgAnhPhongTro"
+                    android:layout_toRightOf="@id/imgAnhPhongTro1"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="50dp"
@@ -337,9 +340,10 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="Ảnh"
-                    android:id="@+id/button2" />
+                    android:id="@+id/btnDangAnh" />
 
                 <Button
+                    android:id="@+id/btnDangTin"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/radius_button"
                     android:textColor="@color/text_blue"
@@ -348,6 +352,7 @@
                     android:layout_height="match_parent"
                     android:text="Đăng tin"/>
                 <Button
+                    android:id="@+id/btnHuy"
                     android:background="@drawable/radius_button"
                     android:textColor="@color/text_blue"
                     android:layout_width="0dp"
