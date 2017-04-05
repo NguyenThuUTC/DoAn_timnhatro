@@ -2,14 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:layout_height="match_parent">
 
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#34b4e3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Đăng tin"
+        android:gravity="center_horizontal|bottom"
+        android:textSize="18sp"/>
+    <View
+        android:background="#34b4e3"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+
+        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -21,7 +36,6 @@
                 android:text="---Thông tin liên hệ---"/>
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tên chủ nhà"/>
@@ -34,7 +48,6 @@
                 android:layout_height="40dp" />
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Điện thoại liên hệ"/>
@@ -58,7 +71,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -85,7 +97,6 @@
             </TableRow>
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Địa chỉ"/>
@@ -98,12 +109,11 @@
                 android:layout_height="40dp" />
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Diện tích"/>
             <EditText
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColorHint="@color/text_black"
                 android:gravity="center_vertical"
                 android:id="@+id/edtDienTich"
@@ -111,7 +121,6 @@
                 android:layout_height="40dp" />
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giá phòng"/>
@@ -123,7 +132,6 @@
                 android:textSize="14sp"/>
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phòng ở tầng thứ?"/>
@@ -135,7 +143,6 @@
                 android:layout_height="40dp" />
             <TextView
                 android:textSize="14sp"
-                android:textColor="@color/text_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giờ giấc"/>
@@ -151,7 +158,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -170,7 +176,7 @@
                         android:text="Có"/>
 
                     <RadioButton
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:id="@+id/rdoKhongCoDieuHoa"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -183,7 +189,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -202,7 +207,7 @@
                         android:text="Có"/>
 
                     <RadioButton
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:id="@+id/rdoKhongNL"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -215,7 +220,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -234,7 +238,7 @@
                         android:text="Khép kín"/>
 
                     <RadioButton
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:id="@+id/rdoNVSKhongKhepKin"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -247,7 +251,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -280,7 +283,6 @@
                 <TextView
                     android:textSize="14sp"
                     android:layout_marginRight="20dp"
-                    android:textColor="@color/text_black"
                     android:gravity="center_vertical"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
@@ -308,22 +310,21 @@
                 </RadioGroup>
             </TableRow>
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/imgAnhPhongTro1"
-                    android:layout_width="0dp"
-                    android:layout_weight="8"
+                    android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/banner"/>
                 <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
                     android:id="@+id/btnThemAnh"
                     android:background="@drawable/radius_button"
                     android:textColor="@color/text_blue"
-                    android:layout_toRightOf="@id/imgAnhPhongTro1"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="Thêm ảnh"/>
             </LinearLayout>

@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.admin.doan_timnhatro.DangTin.DangTinDialog;
 import com.example.admin.doan_timnhatro.Login.UserInformation;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -79,6 +80,8 @@ public class TrangChuActivity extends AppCompatActivity
     private View.OnClickListener DangTinClick =new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            DangTinDialog dangTinDialog=new DangTinDialog();
+            dangTinDialog.showDialog(TrangChuActivity.this,"");
         }
     };
 

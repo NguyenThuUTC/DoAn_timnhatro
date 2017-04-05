@@ -2,7 +2,11 @@ package com.example.admin.doan_timnhatro.DangTin;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.sax.RootElement;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -12,12 +16,15 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.admin.doan_timnhatro.R;
+import com.example.admin.doan_timnhatro.TrangChuActivity;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by admin on 4/4/2017.
  */
 
-public class DangTinDialog{
+public class DangTinDialog extends DialogFragment{//DialogFragment là một dạng api mới cho phép người dùng nhập liệu trong dialog
 
     Button btnThemAnh,btnDangAnh,btnDangTin,btnHuy;
     EditText edtTenChuNha,edtDTLienHe,edtDiaChi,edtDienTich,edtTang,edtGioGiac;
@@ -25,6 +32,7 @@ public class DangTinDialog{
     RadioButton rdoCoChoDeXe,rdoKhongCoChoDeXe,rdoCoWifi,rdoTuKeoMang;
     ImageView  imgAnhPhongTro1;
     Dialog dialog;
+
     public void showDialog(Activity activity, String msg){
         dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -87,9 +95,12 @@ public class DangTinDialog{
     private View.OnClickListener DangAnhClick=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            Intent gallery = new Intent(Intent.ACTION_GET_CONTENT);
+            gallery.setType("image/*");
+           getActivity().startActivityForResult(gallery,1);
         }
     };
+
 
     private View.OnClickListener DangTinClick=new View.OnClickListener() {
         @Override
@@ -105,4 +116,12 @@ public class DangTinDialog{
         }
     };
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1 && resultCode == RESULT_OK){
+            Uri imageUri = data.getData();
+            imgAnhPhongTro1.setImageURI(imageUri);
+        }
+    }
 }
