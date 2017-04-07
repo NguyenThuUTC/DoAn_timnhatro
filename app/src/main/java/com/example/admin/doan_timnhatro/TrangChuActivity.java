@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,15 +81,14 @@ public class TrangChuActivity extends AppCompatActivity
     private View.OnClickListener DangTinClick =new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            FragmentManager fragmentManager=getFragmentManager();
             DangTinDialog dangTinDialog=new DangTinDialog();
-            dangTinDialog.showDialog(TrangChuActivity.this,"");
+            dangTinDialog.show(fragmentManager,"Đăng tin");
+
         }
     };
 
 
-    private void batSuKienDialog(){
-
-    }
     private void anhXa() {
         txtDangTin= (TextView) findViewById(R.id.txtDangTin);
     }
