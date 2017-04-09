@@ -86,11 +86,13 @@ public class DangTinDialog extends DialogFragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btnDangAnh){
-            Intent gallery = new Intent(Intent.ACTION_GET_CONTENT);
-            gallery.setType("image/*");
+            // Gọi intent của hệ thống để chọn ảnh nhé.
+            Intent intent = new Intent();
+            intent.setType("image/*");
             // Thêm dòng này để có thể select nhiều ảnh trong 1 lần nhé các bạn
-            gallery.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-            startActivityForResult(Intent.createChooser(gallery, "Select Files to Upload"),
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Select Files to Upload"),
                     1);
         }
         else if(v.getId()==R.id.btnDangTin){

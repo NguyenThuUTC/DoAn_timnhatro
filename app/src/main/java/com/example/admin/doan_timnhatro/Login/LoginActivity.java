@@ -40,13 +40,12 @@ public class LoginActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
     TextView txtDangKy, txtDangNhap, txtDangKy1, txtDangNhap1;
-    ImageView imgAvatar;
-    EditText edtTen, edtSoDT, edtPass;
+    ImageView imgAvatar_login;
+    EditText edtTen__login, edtSoDT_login, edtPass_login;
 
     private FirebaseAuth mAuth;
-    private StorageReference mStorageRef;
-    FirebaseDatabase fb;
-    String uriImg = "";
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReferenceFromUrl("gs://doantimnhatro.appspot.com");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +53,96 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-
-        fb = FirebaseDatabase.getInstance();
 
         anhXa();
         batSuKien();
     }
 
+    public void taoTaiKhoan(){
+        String email=edtSoDT_login.getText().toString().trim()+"@gmail.com";
+        String password=edtPass_login.getText().toString().trim();
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                        if(task.isSuccessful()){
+                            // đặt tên và ảnh đại diện
+                            loadAnh();
+                        }
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                }
+                });
+    }
+
+    public void loadAnh(){
+        // Get the data from an ImageView as bytes
+        imgAvatar_login.setDrawingCacheEnabled(true);
+        imgAvatar_login.buildDrawingCache();
+        Bitmap bitmap = imgAvatar_login.getDrawingCache();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        // Create a reference to "avatar.png"
+        StorageReference mountainsRef = storageRef.child("Avatar/abc123.jpg");
+        UploadTask uploadTask = mountainsRef.putBytes(data);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+
+                //-------Đặt tên và ảnh đại diện-----
+                //lấy người dùng hiện tại
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                String ten=edtTen__login.getText().toString();
+
+                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(ten)
+                        .setPhotoUri(downloadUrl)
+                        .build();
+
+                user.updateProfile(profileUpdates)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User profile updated.");
+                                    Toast.makeText(LoginActivity.this, "Thành công ", Toast.LENGTH_SHORT).show();
+
+                                    Intent intent=new Intent(LoginActivity.this,TrangChuActivity.class);
+                                    startActivity(intent);
+                                }
+                                else
+                                    Toast.makeText(LoginActivity.this, "Không thể tạo tên và ảnh đại diện", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                //Toast.makeText(LoginActivity.this, String.valueOf(downloadUrl), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
     private void batSuKien() {
         txtDangKy.setOnClickListener(onDangKyClick);
-        txtDangKy1.setOnClickListener(onDangKy1Click1);
+        txtDangKy1.setOnClickListener(onDangKy1Click);
         txtDangNhap.setOnClickListener(onDangNhapClick);
         txtDangNhap1.setOnClickListener(onDangNhap1Click);
     }
@@ -75,10 +153,10 @@ public class LoginActivity extends AppCompatActivity {
         txtDangKy1 = (TextView) findViewById(R.id.txtDangKy1);
         txtDangNhap = (TextView) findViewById(R.id.txtDangNhap);
         txtDangNhap1 = (TextView) findViewById(R.id.txtDangNhap1);
-        imgAvatar = (ImageView) findViewById(R.id.imgAvatar);
-        edtTen = (EditText) findViewById(R.id.edtTen);
-        edtSoDT = (EditText) findViewById(R.id.edtSDT);
-        edtPass = (EditText) findViewById(R.id.edtPass);
+        imgAvatar_login = (ImageView) findViewById(R.id.imgAvatar_login);
+        edtTen__login = (EditText) findViewById(R.id.edtTen_login);
+        edtSoDT_login = (EditText) findViewById(R.id.edtSDT_login);
+        edtPass_login = (EditText) findViewById(R.id.edtPass_login);
     }
 
     private View.OnClickListener onDangKyClick = new View.OnClickListener() {
@@ -87,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
             txtDangNhap.setTextColor(getResources().getColor(R.color.text_black));
             txtDangKy.setTextColor(getResources().getColor(R.color.text_blue));
             txtDangNhap1.setVisibility(View.GONE);
-            edtTen.setVisibility(View.VISIBLE);
+            edtTen__login.setVisibility(View.VISIBLE);
             txtDangKy1.setVisibility(View.VISIBLE);
 
         }
@@ -98,107 +176,21 @@ public class LoginActivity extends AppCompatActivity {
         public void onClick(View v) {
             txtDangNhap.setTextColor(getResources().getColor(R.color.text_blue));
             txtDangKy.setTextColor(getResources().getColor(R.color.text_black));
-            edtTen.setVisibility(View.GONE);
+            edtTen__login.setVisibility(View.GONE);
             txtDangKy1.setVisibility(View.GONE);
             txtDangNhap1.setVisibility(View.VISIBLE);
         }
     };
 
-    private void dangKy() {
-        final String soDT = edtSoDT.getText().toString() + "@gmail.com";
-        String password = edtPass.getText().toString();
-
-        mAuth.createUserWithEmailAndPassword(soDT, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                task.addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(LoginActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                task.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
-    }
-
-    private void duaAnhVaoStorage() {
-
-        //đẩy ảnh vào storge trên fibasse
-        StorageReference mountainsRef = mStorageRef.child("avatar_" + edtSoDT.getText().toString() + ".png");
-        // Get the data from an ImageView as bytes
-        imgAvatar.setDrawingCacheEnabled(true);
-        imgAvatar.buildDrawingCache();
-        Bitmap bitmap = imgAvatar.getDrawingCache();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] data = baos.toByteArray();
-
-        UploadTask uploadTask = mountainsRef.putBytes(data);
-
-        Log.d(TAG, "duaAnhVaoStorage: ");
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
-                Toast.makeText(LoginActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-                Toast.makeText(LoginActivity.this, "Lấy được đường dẫn ảnh", Toast.LENGTH_SHORT).show();
-                Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                uriImg = String.valueOf(downloadUrl);
-            }
-        });
-
-    }
-
-    public void luuThongTinUser() {
-        duaAnhVaoStorage();
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            String uid = user.getUid();
-            String sdtUser = edtSoDT.getText().toString();
-            String tenUser = edtTen.getText().toString().trim();
-
-            Date date = new Date();
-            String strDateFormat = "dd/MM/yyyy";
-            //tạo đối tượng SimpleDateFormat;
-            SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-            //gọi hàm format để lấy chuỗi ngày tháng năm đúng theo yêu cầu
-            String ngayTaoTK = sdf.format(date);
-            //Muốn xuất Giờ:Phút:Giây AM (PM)
-            String strDateFormat12 = "hh:mm:ss a";
-            sdf = new SimpleDateFormat(strDateFormat12);
-
-            ngayTaoTK += " " + sdf.format(date);
-
-            fb.getReference("ListUser").child(uid).setValue(new UserInformation(uriImg, tenUser, sdtUser, ngayTaoTK));
-
-        }
-    }
-
-    private View.OnClickListener onDangKy1Click1 = new View.OnClickListener() {
+    private View.OnClickListener onDangKy1Click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-            if (edtTen.getText().toString().equals("") || edtSoDT.getText().toString().equals("")
-                    || edtPass.getText().toString().equals("")) {
+            txtDangKy1.setTextColor(getResources().getColor(R.color.text_red));
+            if (edtTen__login.getText().toString().equals("") || edtSoDT_login.getText().toString().equals("")
+                    || edtPass_login.getText().toString().equals("")) {
                 Toast.makeText(LoginActivity.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                dangKy();
-                luuThongTinUser();
-                Intent intent = new Intent(LoginActivity.this, TrangChuActivity.class);
-                startActivity(intent);
+                    taoTaiKhoan();
             }
 
         }
@@ -206,8 +198,10 @@ public class LoginActivity extends AppCompatActivity {
     private View.OnClickListener onDangNhap1Click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String sdt=edtSoDT.getText().toString()+"@gmail.com";
-            String pass=edtPass.getText().toString();
+
+            txtDangNhap1.setTextColor(getResources().getColor(R.color.text_red));
+            String sdt=edtSoDT_login.getText().toString()+"@gmail.com";
+            String pass=edtPass_login.getText().toString();
 
             mAuth.signInWithEmailAndPassword(sdt,pass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override

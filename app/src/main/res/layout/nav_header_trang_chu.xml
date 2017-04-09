@@ -13,26 +13,23 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
    <ImageView
-
        android:layout_width="70dp"
        android:layout_height="70dp"
-       android:id="@+id/imgAvatar"
-       android:src="@drawable/icon_avatar"/>
+       android:id="@+id/imgAvatar_nav"
+     />
     <TextView
         android:gravity="center_vertical"
-        android:id="@+id/txtTen"
+        android:id="@+id/txtTen_nav"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="Nguyễn Thị Thu"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="#0aea7e"/>
     <TextView
         android:gravity="center_vertical"
         android:textStyle="bold"
-        android:id="@+id/txtSoDT"
+        android:id="@+id/txtSoDT_nav"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="01668099981"/>
+        android:layout_height="30dp" />
 
 </LinearLayout>

@@ -41,8 +41,12 @@ import com.squareup.picasso.Picasso;
 public class TrangChuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    NavigationView navigationView;
     TextView txtDangTin;
+    ImageView imgAvatar_nav;
+    TextView txtTen_nav,txtSoDT_nav;
 
+    private FirebaseAuth mAuth;
     FirebaseDatabase fb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +70,36 @@ public class TrangChuActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        mAuth = FirebaseAuth.getInstance();
 
+
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         fb=FirebaseDatabase.getInstance();
         anhXa();
+
+
+        laythongtinnguoidung();
         batSuKien();
+    }
+
+    private void laythongtinnguoidung() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
+
+            txtTen_nav.setText(name);
+            txtSoDT_nav.setText(email);
+            Picasso.with(TrangChuActivity.this).load(String.valueOf(photoUrl)).into(imgAvatar_nav);
+        }
     }
 
 
@@ -91,6 +119,10 @@ public class TrangChuActivity extends AppCompatActivity
 
     private void anhXa() {
         txtDangTin= (TextView) findViewById(R.id.txtDangTin);
+        View hView =  navigationView.getHeaderView(0);
+        txtTen_nav = (TextView)hView.findViewById(R.id.txtTen_nav);
+        txtSoDT_nav= (TextView) hView.findViewById(R.id.txtSoDT_nav);
+        imgAvatar_nav= (ImageView) hView.findViewById(R.id.imgAvatar_nav);
     }
 
     @Override

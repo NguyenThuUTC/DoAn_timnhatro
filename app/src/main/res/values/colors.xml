@@ -6,4 +6,5 @@
     <color name="text_blue">#1D30E6</color>
     <color name="text_lightBlue">#179de6</color>
     <color name="text_black">#000</color>
+    <color name="text_red">#ff0000</color>
 </resources>

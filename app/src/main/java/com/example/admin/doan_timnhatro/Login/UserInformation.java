@@ -11,16 +11,14 @@ public class UserInformation implements Serializable {
     String urlAvatar;
     String ten;
     String soDT;
-    String ngayTao;
 
     public UserInformation() {
     }
 
-    public UserInformation(String urlAvatar, String ten, String soDT, String ngayTao) {
+    public UserInformation(String urlAvatar, String ten, String soDT) {
         this.urlAvatar = urlAvatar;
         this.ten = ten;
         this.soDT = soDT;
-        this.ngayTao = ngayTao;
     }
 
     public String getUrlAvatar() {
@@ -47,11 +45,4 @@ public class UserInformation implements Serializable {
         this.soDT = soDT;
     }
 
-    public String getNgayTao() {
-        return ngayTao;
-    }
-
-    public void setNgayTao(String ngayTao) {
-        this.ngayTao = ngayTao;
-    }
 }
