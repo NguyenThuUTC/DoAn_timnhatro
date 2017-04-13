@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.doan_timnhatro.DangTin.ThongTinLienHeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/text_blue"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="Thông tin liên hệ"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#adde1d"
+        android:layout_marginBottom="5dp"/>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <LinearLayout
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Tên chủ nhà"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/edtTenChuNha"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Địa chỉ(Số nhà, đường)"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtDiaChi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Tỉnh/Thành phố"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/spTinh_ThanhPho"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Quận/Huyện"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/spQuan_Huyen"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Phường xã"
+                android:textSize="14sp"
+                android:id="@+id/textView" />
+
+            <Spinner
+                android:id="@+id/spPhuong_Xa"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="Điện thoại liên hệ"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtSoDT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/txtTiepTucDangTin"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/text_blue"
+        android:text="Tiếp tục đăng tin..."/>
+
+</LinearLayout>

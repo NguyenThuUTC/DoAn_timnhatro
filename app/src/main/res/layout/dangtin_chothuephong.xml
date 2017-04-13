@@ -19,6 +19,7 @@
         android:layout_height="3dp"
 
         />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -309,25 +310,13 @@
                         android:text="Tự kéo"/>
                 </RadioGroup>
             </TableRow>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/imgAnhPhongTro1"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:src="@drawable/banner"/>
-                <Button
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/btnThemAnh"
-                    android:background="@drawable/radius_button"
-                    android:textColor="@color/text_blue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:text="Thêm ảnh"/>
-            </LinearLayout>
+           <LinearLayout
+               android:orientation="vertical"
+               android:id="@+id/lnrImages"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+           </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"

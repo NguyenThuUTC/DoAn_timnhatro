@@ -8,4 +8,7 @@
 
     <string name="dangky"><b><u>Đăng ký</u></b></string>
     <string name="dangnhap"><b><u>Đăng nhập</u></b></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
