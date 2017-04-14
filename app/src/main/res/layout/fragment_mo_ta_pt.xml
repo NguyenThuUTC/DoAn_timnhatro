@@ -29,6 +29,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Đối tượng cho thuê"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spDoiTuongThue"></Spinner>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -62,6 +72,18 @@
                         android:textSize="14sp" />
                 </RadioGroup>
             </TableRow>
+            <TextView
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Số lượng phòng"/>
+
+            <EditText
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/edtSoLuongPhong"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -104,13 +126,42 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Giờ giấc"
+                android:textSize="14sp" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spGioGiac">
+            </Spinner>
+            <TextView
+                android:id="@+id/txtMoCua"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Giờ giấc"
+                android:text="Giờ mở cửa"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/edtGioGiac"
+                android:visibility="gone"
+                android:id="@+id/edtTgianMoCua"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="@color/text_black"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/txtDongCua"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giờ đóng cửa"
+                android:textSize="14sp" />
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/edtTgianDongCua"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textColorHint="@color/text_black"
@@ -278,10 +329,10 @@
                         android:textSize="14sp" />
 
                     <RadioButton
-                        android:id="@+id/rdoTuKeoMang"
+                        android:id="@+id/rdoKhongCoWifi"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Tự kéo"
+                        android:text="Không"
                         android:textSize="14sp" />
                 </RadioGroup>
             </TableRow>

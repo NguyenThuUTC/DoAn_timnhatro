@@ -52,19 +52,19 @@ public class ThongTinLienHeFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
         if(v.getId()==R.id.txtTiepTucDangTin){
             txtTiepTucDangTin.setTextColor(getResources().getColor(R.color.text_red));
-//            ten=edtTenChuNha.getText().toString();
-//            diaChi=edtDiaChi.getText().toString();
-//            sdt=edtSoDT.getText().toString();
-//            tinh_tp=spTinh_ThanhPho.getSelectedItem().toString();
-//            quan_huyen=spQuan_Huyen.getSelectedItem().toString();
-//            phuong_xa=spPhuong_xa.getSelectedItem().toString();
-//            Bundle bundle = new Bundle();
-//            bundle.putString("ten", ten);
-//            bundle.putString("diaChi", diaChi);
-//            bundle.putString("soDT",sdt);
-//            bundle.putString("tinh_tp",tinh_tp);
-//            bundle.putString("quan_huyen",quan_huyen);
-//            bundle.putString("phuong_xa",phuong_xa);
+            ten=edtTenChuNha.getText().toString();
+            diaChi=edtDiaChi.getText().toString();
+            sdt=edtSoDT.getText().toString();
+            tinh_tp=spTinh_ThanhPho.getSelectedItem().toString();
+            quan_huyen=spQuan_Huyen.getSelectedItem().toString();
+            phuong_xa=spPhuong_xa.getSelectedItem().toString();
+            Bundle bundle = new Bundle();
+            bundle.putString("ten", ten);
+            bundle.putString("diaChi", diaChi);
+            bundle.putString("soDT",sdt);
+            bundle.putString("tinh_tp",tinh_tp);
+            bundle.putString("quan_huyen",quan_huyen);
+            bundle.putString("phuong_xa",phuong_xa);
 
             MoTaPTFragment moTaPTFragment = new MoTaPTFragment();
             //moTaPTFragment.setArguments(bundle);
